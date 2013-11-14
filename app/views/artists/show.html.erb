@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<% if !@artist.albums.empty? %>
+	<b>Albums of <%= @artist.artist_name %> <br></b><br \>
+	<% @artist.albums.each do |a| %>
+<%= link_to a.title, a %></td>
+<br \>
+<% end %>
+
+<% else%>
+		<b> <%= @artist.artist_name %> has no album yet <br><b \>
+		<% end %>
+<br>
+
+<%= link_to 'Back', artists_path %>

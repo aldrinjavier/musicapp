@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Musicapp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="banner">
+	<%= image_tag("photo.jpg", :size => "500x90") %>
+	
+</div>
+
+<div id= "nav">
+<ul>
+
+<li><%= link_to "Home ", root_path%>|</li>
+<li><%= link_to "About us ", pages_about_path %>|</li>
+<li><%= link_to "Album Collections", albums_path %>|</li>
+<li><%= link_to "Artists", artists_path %>|</li>
+<li><%= link_to "Genres", genres_path %>|</li>
+<li><%= link_to "Record Labels", labels_path %></li>
+
+
+<div id= "nav1">
+<ul1>
+<% if !signed_in? %>
+	<li1 align = "left"><%= link_to "Sign In ", signin_path %>|</li1>
+	
+<% else %>
+	<li1 align = "left">Hello <%= @current_customer.first_name %>! You are signed in as: <%= @current_customer.email_address %></li1>
+	<li1 align = "left"><%= link_to "Sign Out ", signout_path %>|</li1>
+	
+<%end %>
+	<li1><%= link_to "DT354", 'http://www.dit.ie/catalogue/Programmes/Details/DT354'%></li>
+</ul1>
+</div1>
+	
+</ul>
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>

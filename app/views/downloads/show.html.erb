@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @download.customer.email_address %>
+</p>
+
+<p>
+  <b>Album:</b>
+  <%= @download.album.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @download.date %>
+</p>
+
+<p>
+  <b>Payment method:</b>
+  <%= @download.payment_method %>
+</p>
+
+
+<%= link_to 'Edit', edit_download_path(@download) %> |
+<%= link_to 'Back', downloads_path %>

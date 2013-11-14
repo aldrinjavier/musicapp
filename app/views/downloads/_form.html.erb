@@ -1,0 +1,33 @@
+<%= form_for(@download) do |f| %>
+  <% if @download.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@download.errors.count, "error") %> prohibited this download from being saved:</h2>
+
+      <ul>
+      <% @download.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.collection_select :customer_id, Customer.all, :id, :email_address%>
+  </div>
+  <div class="field">
+    <%= f.label :album_id %><br />
+    <%= f.collection_select :album_id, Album.all, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date, { :include_blank => true, :start_year => 2000, :end_year => Time.now.year } %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_method %><br />
+    <%= f.select :payment_method,["Master Card", "Visa", "Paypal"] %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Buy Album" %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>List of Artists</h1>
+
+<table>
+  <tr>
+    <th>Artist</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @artists.each do |artist| %>
+  <tr>
+    <td><%= artist.artist_name %></td>
+    <td><%= link_to 'Show Album(s) of this artist', artist %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Home', root_path %>

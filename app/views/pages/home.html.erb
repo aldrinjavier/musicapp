@@ -1,0 +1,21 @@
+<% if !signed_in? %>
+<h1 align="center"><BR>Welcome to Aldrin's MUSIC WORLD...</h1>
+<p align="center"><em>"where you can buy and download music album from the world's largest online music catalogue."</EM><br>Register now to access wide range of album collection from our database.<br><br><br></p>
+<p align="center"><strong><font size=4>NOT YET REGISTERED? Click the link below.<BR>↓<BR></font></p>
+<p align="center"><strong><%= link_to "SIGN UP", new_customer_path %></strong></strong></p>
+
+<%= image_tag("bann.jpeg", :height => '400', :width => '1500') %> 
+
+<% else %>
+<h1 align="center"><font size=4>Welcome <%= @current_customer.first_name %> <%= @current_customer.last_name %>... What do you want to do?<BR></font></h1>
+<center>
+<li align="center">View albums:&nbsp&nbsp <%= link_to "CLICK HERE", albums_path %></li>
+<li align="center">View account: <%= link_to "CLICK HERE", customer_path(@current_customer) %></li>
+<li align="center">Update account:&nbsp <%= link_to "CLICK HERE", edit_customer_path(@current_customer) %></li>
+</center>
+<p>
+
+  <%= image_tag("white.jpeg", :height => '500', :width => '1580') %> 
+</p>
+<% end %>
+  

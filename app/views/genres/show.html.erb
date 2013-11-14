@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<% if !@genre.albums.empty? %>
+<b><%= @genre.genre %> <br></b><br \>
+<% @genre.albums.each do |g| %>
+<%= link_to g.title, g %></td>
+<br \>
+<% end %>
+
+<% else%>
+		<b> <%= @genre.genre %> has no album yet <br><b \>
+		<% end %>
+<br>
+s
+<%= link_to 'Back', artists_path %>

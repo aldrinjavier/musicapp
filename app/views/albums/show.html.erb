@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @album.title %>
+</p>
+
+<p>
+  <b>Cover:</b>
+  <%= image_tag(@album.cover, :size => "80x80") %>
+</p>
+
+<p>
+  <b>Price:</b>
+  € <%= @album.price %>
+</p>
+
+
+<p>
+  <b>Date released:</b>
+  <%= @album.date_released %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @album.duration %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%= @album.artist.artist_name %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @album.genre.genre%>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @album.label.label %>
+</p>
+
+<%= link_to 'Purchase', new_download_path %> |
+<%= link_to 'Back', albums_path %>

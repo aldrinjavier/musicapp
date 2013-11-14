@@ -1,0 +1,34 @@
+<h1>List of albums<br><br></h1>
+<%= will_paginate @albums %>
+<table  CELLPADDING=15>
+  <tr>
+    <th>Album Cover</th>
+	<th>Title</th>
+	<th>Artist</th>
+    <th>Price</th>
+    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @albums.each do |album| %>
+
+  <tr>
+    <td><%= image_tag(album.cover, :size => "100x100") %></td>
+    <td><%= album.title %></td>
+	<td><%= album.artist.artist_name %></td>
+    <td><%= album.price %></td>
+    <td>Download this album by clicking here: <%= link_to 'Download', album %></td>
+  </tr>
+<% end %>
+
+
+</table>
+
+<%= will_paginate @albums %><br>
+
+<%= link_to 'Home', root_path %>
+
+
+
